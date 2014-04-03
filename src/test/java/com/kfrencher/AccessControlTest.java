@@ -58,7 +58,7 @@ public class AccessControlTest extends AbstractTransactionalJUnit4SpringContextT
         states.add(expectedState);
         repository.save(states);
 
-        List<State> actualStates = repository.findCanadienStates();
+        List<State> actualStates = repository.findCanadienStates("Canada");
 
         assertThat(actualStates, hasSize(1));
         assertThat(actualStates, hasItem(expectedState));
